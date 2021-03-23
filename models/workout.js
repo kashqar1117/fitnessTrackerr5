@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-const cardioSchema = new Schema({
+const workoutSchema = new Schema({
+
+    day:{
+        type:Date,
+        default:Date.now
+    },
 
 
     excersices: [
@@ -53,6 +58,6 @@ const cardioSchema = new Schema({
 })
 
 
-const CardioModel = mongoose.model('Cardio', cardioSchema)
+const workoutModel = mongoose.model('Workout', workoutSchema)
 
-module.exports = CardioModel
+module.exports = workoutModel
