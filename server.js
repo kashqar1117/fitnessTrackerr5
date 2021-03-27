@@ -10,24 +10,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))) 
 
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://kashqar1117:Louise2121@workouts.yx82x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 
-Workout.create({})
-.then(function(workouts){
-    console.log(workouts)
+Workout.create().then(function(workouts){
+    console.log("workouts", workouts)
 
 })
 
 app.get('/exercise', (req, res)=>
 {
-    console.log(req.body)
+    console.log( "excerciseBody", req.body)
     res.sendFile(__dirname + '/public/exercise.html');
 })
 app.get('/stats', (req, res)=>
 {
-    console.log(req.body)
+    console.log("statsBody",req.body)
     res.sendFile('/public/stats.html')
 })
 
@@ -35,17 +34,35 @@ app.listen(3000), () =>{
     console.log('server running')
 }
 
-app.post("/api/workouts", ({ body }, res) => {
+// app.get("/api/workouts", ({ body }, res) => {
 
-    console.log(body)
+
    
+    // Workout.find({}, (err, docs) => {
+    //   if (err) throw err;
+    //   console.log('workoutsDocs', docs)
+    //   res.send(docs)
+    // })
   
-    Workout.save(workouts, (error, saved) => {
-      if (error) {
-        console.log(error);
-      } else {
-        res.send(saved);
-      }
-    });
-  });
+    // Workout.save(workouts, (error, saved) => {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     res.send(saved);
+    //   }
+    // });
+//   });
   
+//   app.post("/api/workouts", ({ body }, res) => {
+
+    
+   
+//     Workout.create({exercises: {reps: req.body.reps}}) 
+  
+
+
+//    } );
+
+  //  await Character.create([{ name: 'Will Riker' }, { name: 'Geordi LaForge' }]);
+
+
