@@ -4,6 +4,8 @@ const app = express()
 const Workout = require('./models/workout')
 var path = require('path');
 
+console.log(Workout)
+
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -35,16 +37,17 @@ mongoose.connect('mongodb+srv://kashqar1117:Louise2121@workouts.yx82x.mongodb.ne
     })
     })
 
-        app.get("/api/workouts", (req, res) => {
+        // app.get("/api/workouts", (req, res) => {
+        // }
 
 
 
-    Workout.find({}, (err, docs) => {
-        if (err) throw err;
-        console.log('workoutsDocs', docs)
-        res.json(docs)
-    })
-    })
+    // Workout.find({}, (err, docs) => {
+    //     if (err) throw err;
+    //     console.log('workoutsDocs', docs)
+    //     res.json(docs)
+    // })
+    // })
 
 
 
@@ -84,5 +87,3 @@ mongoose.connect('mongodb+srv://kashqar1117:Louise2121@workouts.yx82x.mongodb.ne
 //    } );
 
   //  await Character.create([{ name: 'Will Riker' }, { name: 'Geordi LaForge' }]);
-
-
