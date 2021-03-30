@@ -13,7 +13,7 @@ const workoutSchema = new Schema({
 
     excercises: [
         {
-            excerciseType: {
+            type: {
                 type: String,
                 required: "Exercise is required"
             },
