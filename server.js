@@ -101,13 +101,23 @@ app.put("/api/workouts/:id", (req, res) => {
 //db.students.insert({name: 'Steve', row:3, os:'Mac', hobbies:['Coding', 'Reading', 'Running'] })
 
 app.get('/exercise', (req, res) => {
-    console.log("excerciseBody", req.body)
+
     res.sendFile(__dirname + '/public/exercise.html');
 })
 app.get('/stats', (req, res) => {
-    console.log("statsBody", req.body)
+
     res.sendFile(__dirname + '/public/stats.html')
 })
+
+
+app.get('/', (req, res) => {
+
+    res.sendFile(__dirname + '/index/stats.html')
+})
+
+
+
+
 
 
 
