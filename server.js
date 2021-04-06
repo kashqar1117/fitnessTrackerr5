@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const Workout = require('./models/workout')
+let PORT =8080
+PORT = process.env.PORT || 3001;
 var path = require('path');
 
 console.log(Workout)
@@ -122,7 +124,7 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(8080), () => {
+app.listen(PORT), () => {
     console.log('server running')
 }
     // Workout.save(workouts, (error, saved) => {
